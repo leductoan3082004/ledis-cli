@@ -2,7 +2,10 @@ GO = go
 GOFMT = gofmt
 BINARY_NAME = ledis-cli
 
-build:
+install:
+	$(GO) mod tidy
+
+build: install
 	$(GO) build -o $(BINARY_NAME)
 
 clean:
